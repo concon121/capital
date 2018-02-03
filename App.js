@@ -2,8 +2,8 @@ import {Container, Title, Button, Icon, Text, Drawer} from 'native-base';
 import React from 'react';
 import {StatusBar, StyleSheet, View} from 'react-native';
 import {Font} from 'expo';
-import SideBar from './components/sideBar';
-import AppHeader from './components/header'
+import SideBar from './components/sidebar/index';
+import AppHeader from './components/header/index'
 
 export default class App extends React.Component {
   state = {

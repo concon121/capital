@@ -11,71 +11,10 @@ import {
   Right,
   Badge
 } from "native-base";
-
-const styles = {
-  drawerCover: {
-    alignSelf: "stretch",
-    height: 500,
-    width: null,
-    position: "relative",
-    marginBottom: 10
-  },
-  drawerImage: {
-    position: "absolute",
-    left: 50,
-    top: 100,
-    width: 210,
-    height: 75,
-    resizeMode: "cover"
-  },
-  text: {
-    fontWeight: "400",
-    fontSize: 16,
-    marginLeft: 20
-  },
-  badgeText: {
-    fontSize: 11,
-    fontWeight: "400",
-    textAlign: "center",
-    marginTop: -3
-  }
-};
-
-const drawerCover = require("../imgs/drawer-cover.png");
-const drawerImage = require("../imgs/logo-kitchen-sink.png");
-const datas = [
-  {
-    name: "Dashboard",
-    route: "Dashboard",
-    icon: "md-home",
-    bg: "#C5F442"
-  },
-  {
-    name: "Income",
-    route: "Income",
-    icon: "md-cash",
-    bg: "#C5F442"
-  },
-  {
-    name: "Expenses",
-    route: "Expenses",
-    icon: "md-cart",
-    bg: "#477EEA"
-  },
-  {
-    name: "Savings",
-    route: "Savings",
-    icon: "md-battery-charging",
-    bg: "#DA4437"
-  },
-  {
-    name: "Loans",
-    route: "Loans",
-    icon: "md-calendar",
-    bg: "#4DCAE0"
-  }
-];
-
+const styles = require('./styles').default
+const datas = require('./data').default
+const drawerCover = require("../../imgs/drawer-cover.png");
+const drawerImage = require("../../imgs/logo-kitchen-sink.png");
 class SideBar extends Component {
   constructor(props) {
     super(props);
