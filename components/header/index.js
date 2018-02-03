@@ -16,7 +16,7 @@ class AppHeader extends Component {
             onPress={() => openDrawer()}>
             <Icon color={colors.white} ios='ios-menu' android="md-menu" />
           </Button>
-          <Title style={styles.title}>Capital</Title>
+          <Title style={styles.title}>{this.props.text}</Title>
         </View>
       </Header>
     )

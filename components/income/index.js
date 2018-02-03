@@ -8,8 +8,7 @@ class Income extends Component {
   render() {
     return (
       <View>
-        <AppHeader />
-        <Text>Income</Text>
+        <AppHeader text="Income"/>
       </View>
     )
   }

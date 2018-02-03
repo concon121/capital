@@ -8,8 +8,7 @@ class Savings extends Component {
   render() {
     return (
       <View>
-        <AppHeader />
-        <Text>Savings</Text>
+        <AppHeader text="Savings"/>
       </View>
     )
   }

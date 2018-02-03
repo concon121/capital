@@ -2,7 +2,10 @@ import colors from '../../colors'
 
 export default {
   title: {
-    backgroundColor: colors.heading,
+    fontWeight: 'bold',
+    textAlign: 'center',
+    fontSize: 18,
+    color: colors.heading,
     width: '100%'
   }
 }

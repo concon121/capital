@@ -8,8 +8,7 @@ class Loans extends Component {
   render() {
     return (
       <View>
-        <AppHeader />
-        <Text>Loans</Text>
+        <AppHeader text="Loans"/>
       </View>
     )
   }

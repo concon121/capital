@@ -29,8 +29,8 @@ class Home extends Component {
       <Container>
         {
           this.state.fontLoaded ? (
-            <View>
-              <AppHeader />
+            <View style={{minHeight: '100%'}}>
+              <AppHeader text="Capital"/>
               <Dashboard />
             </View>
           ) : null

@@ -11,10 +11,8 @@ export default {
     minWidth: '48%',
     maxWidth: '48%',
     minHeight: '48%',
-    maxHeight: '48%'
-  },
-  title: {
-    backgroundColor: colors.heading,
-    width: '100%'
+    maxHeight: '48%',
+    paddingLeft: 10,
+    paddingRight: 10
   }
 }

@@ -1,5 +1,5 @@
 import React, { Component } from 'react';
-import {CardItem, Body, Title} from 'native-base';
+import {CardItem, Body, Text} from 'native-base';
 import styles from './styles'
 
 class CardTitle extends Component {
@@ -7,7 +7,7 @@ class CardTitle extends Component {
     return (
       <CardItem>
         <Body>
-          <Title style={styles.title}>{this.props.text}</Title>
+          <Text style={styles.title}>{this.props.text}</Text>
         </Body>
       </CardItem>
     )

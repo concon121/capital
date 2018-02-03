@@ -10,15 +10,19 @@ class Dashboard extends Component {
       <View style={styles.layout}>
         <Card style={styles.card}>
           <CardTitle text='Income' />
+          <Text>No income details to display</Text>
         </Card>
         <Card style={styles.card}>
           <CardTitle text='Expenses' />
+          <Text>No expenses details to display</Text>
         </Card>
         <Card style={styles.card}>
           <CardTitle text='Savings' />
+          <Text>No savings details to display</Text>
         </Card>
         <Card style={styles.card}>
           <CardTitle text='Loans' />
+          <Text>No loans details to display</Text>
         </Card>
       </View>
     )
