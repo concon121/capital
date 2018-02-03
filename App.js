@@ -1,53 +1,51 @@
+import {Container, Title, Button, Icon, Text, Drawer} from 'native-base';
 import React from 'react';
-import { StyleSheet, Text, View, Navigator, NativeModules } from 'react-native';
-import {MdMenu} from 'react-icons/md'
-import { Button } from 'react-native-material-ui';
-import { COLOR, ThemeProvider } from 'react-native-material-ui';
-import Menu from './components/menu'
-
-// you can set your style right here, it'll be propagated to application
-const uiTheme = {
-    palette: {
-        primaryColor: COLOR.green500,
-    },
-    toolbar: {
-        container: {
-            height: 50,
-        },
-    },
-};
+import {StatusBar, StyleSheet, View} from 'react-native';
+import {Font} from 'expo';
+import SideBar from './components/sideBar';
+import AppHeader from './components/header'
 
 export default class App extends React.Component {
-
-    addIncomeSource() {
-        console.log("Hello WOrld!")
-    }
-
-    render() {
-        return (
-            <ThemeProvider uiTheme={uiTheme}>
-                <View style={{top: 50, justifyContent: 'center'}}>
-                    <Text style={styles.pageTitle}>Financial Planner</Text>
-                    <Button raised primary text="Hello World" />
-                    <Menu/>
-                </View>
-            </ThemeProvider>
-        )
-    }
+  state = {
+    fontLoaded: false,
+  };
+  async componentDidMount() {
+    await Font.loadAsync({
+      'Roboto': require('native-base/Fonts/Roboto.ttf'),
+      'Roboto_medium': require('native-base/Fonts/Roboto_medium.ttf'),
+    });
+    this.setState({ fontLoaded: true });
+  }
+  render() {
+    closeDrawer = () => {
+      this.drawer._root.close()
+    };
+    openDrawer = () => {
+      this.drawer._root.open()
+    };
+    return (
+      <Container>
+        {
+          this.state.fontLoaded ? (
+            <Drawer
+              ref={(ref) => { this.drawer = ref; }}
+              content={
+                <SideBar navigator={this.navigator} />
+              }
+              onClose={() => closeDrawer()} >
+              <AppHeader />
+            </Drawer>
+          ) : null
+        }
+      </Container>
+    );
+  }
 }
-
 const styles = StyleSheet.create({
-    container: {
-        flex: 1,
-        flexDirection: 'column',
-        backgroundColor: '#000',
-        justifyContent: 'space-between',
-        height: '100%',
-        width: '100%'
-    },
-    pageTitle: {
-        color: '#FFF',
-        fontWeight: 'bold',
-        fontSize: 20
-    },
+  container: {
+    flex: 1,
+    backgroundColor: '#fff',
+    alignItems: 'center',
+    justifyContent: 'center',
+  }
 });
